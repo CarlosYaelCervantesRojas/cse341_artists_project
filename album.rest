@@ -1,0 +1,31 @@
+# Localhost
+### Get all albums
+GET  http://localhost:3000/albums
+
+### Get album by Id
+GET  http://localhost:3000/albums/67476085141eec56e82b1dd6
+
+### Post new album
+POST http://localhost:3000/albums
+content-type: application/json
+
+{
+    "name": "Album1",
+    "totalTracks": 9,
+    "genres": ["Rock", "Pop"],
+    "popularity": 5
+}
+
+### Update album
+PUT http://localhost:3000/albums/67476085141eec56e82b1dd6
+content-type: application/json
+
+{
+    "name": "NewAlbum",
+    "totalTracks": 4,
+    "genres": ["Pop"],
+    "popularity": 2
+}
+
+### Delete album
+DELETE  http://localhost:3000/albums/67476085141eec56e82b1dd6
