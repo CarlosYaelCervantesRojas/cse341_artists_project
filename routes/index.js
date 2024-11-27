@@ -6,5 +6,6 @@ router.get("/", (req, res) => {
 
 router.use("/artists", require("./artistRouter"));
 router.use("/albums", require("./albumRouter"));
+router.use("/api-docs", require("./swagger"));
 
 module.exports = router;

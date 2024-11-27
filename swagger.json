@@ -1,0 +1,351 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Artists API",
+    "description": "Artists API project CSE 341",
+    "version": "1.0.0"
+  },
+  "host": "cse341-artists.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "tags": [
+    {
+      "name": "Artists",
+      "description": "Endpoints related to artist operations."
+    },
+    {
+      "name": "Albums",
+      "description": "Endpoints related to album operations."
+    }
+  ],
+  "paths": {
+
+    "/artists/": {
+      "get": {
+        "tags": ["Artists"],
+        "description": "Get all artist.",
+        "responses": {
+          "200": {
+            "description": "Successful response, returns a list of artists"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      },
+      "post": {
+        "tags": ["Artists"],
+        "description": "Create new artist.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "Alan"
+                },
+                "genres": {
+                  "example": ["Pop", "Rock"]
+                },
+                "popularity": {
+                  "example": 4
+                },
+                "followers": {
+                  "example": 52000
+                },
+                "nationality": {
+                  "example": "MX"
+                },
+                "birthday": {
+                  "example": "2000-10-03"
+                },
+                "alive": {
+                  "example": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created (new artist created) return the new artist in the response body."
+          },
+          "400": {
+            "description": "Bad request (validation error) return the validation fields in the response body."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/artists/{id}": {
+      "get": {
+        "tags": ["Artists"],
+        "description": "Get artist by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok, return the artist data."
+          },
+          "400": {
+            "description": "Bad request (bad id format)."
+          },
+          "404": {
+            "description": "Not Found (Id does not exist)."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      },
+      "put": {
+        "tags": ["Artists"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "NewName"
+                },
+                "genres": {
+                  "example": ["Pop", "other genre"]
+                },
+                "popularity": {
+                  "example": 2
+                },
+                "followers": {
+                  "example": 1000
+                },
+                "nationality": {
+                  "example": "GT"
+                },
+                "birthday": {
+                  "example": "2000-10-03"
+                },
+                "alive": {
+                  "example": false
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content (Artist updated succesfully)."
+          },
+          "400": {
+            "description": "Bad request (bad id format) or invalid data in fields."
+          },
+          "404": {
+            "description": "Not Found (Id does not exist)."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Artists"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content (Artist deleted succesfully)."
+          },
+          "400": {
+            "description": "Bad request (bad id format)."
+          },
+          "404": {
+            "description": "Not Found (Id does not exist)."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/albums/": {
+      "get": {
+        "tags": ["Albums"],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "Successful response, returns a list of albums."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      },
+      "post": {
+        "tags": ["Albums"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "NewAlbum"
+                },
+                "totalTracks": {
+                  "example": 9
+                },
+                "genres": {
+                  "example": ["Pop", "Rock"]
+                },
+                "popularity": {
+                  "example": 4
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created (new album created) return the new album in the response body."
+          },
+          "400": {
+            "description": "Bad request (validation error) return the validation fields in the response body."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    },
+    "/albums/{id}": {
+      "get": {
+        "tags": ["Albums"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Ok, return the album data."
+          },
+          "400": {
+            "description": "Bad request (bad id format)."
+          },
+          "404": {
+            "description": "Not Found (Id does not exist)."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      },
+      "put": {
+        "tags": ["Albums"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "NewAlbumName"
+                },
+                "totalTracks": {
+                  "example": 8
+                },
+                "genres": {
+                  "example": ["Pop", "New genre"]
+                },
+                "popularity": {
+                  "example": 4
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content (Album updated succesfully)."
+          },
+          "400": {
+            "description": "Bad request (bad id format) or invalid data in fields."
+          },
+          "404": {
+            "description": "Not Found (Id does not exist)."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Albums"],
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "The Id must be a string that contains a 24 character hexadecimal value."
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content (Album deleted succesfully)."
+          },
+          "400": {
+            "description": "Bad Request (Bad Id format)."
+          },
+          "404": {
+            "description": "Not Found (Id does not exist)."
+          },
+          "500": {
+            "description": "Internal Server Error."
+          }
+        }
+      }
+    }
+  }
+}
