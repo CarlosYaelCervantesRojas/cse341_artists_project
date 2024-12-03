@@ -27,7 +27,7 @@ router.get("/logout",
 
 router.use("/artists", require("./artistRouter"));
 router.use("/albums", require("./albumRouter"));
-router.use("/api-docs", isAuth, require("./swagger"));
+router.use("/api-docs", require("./swagger"));
 router.use("/auth", require("./authRouter"));
 
 module.exports = router;
