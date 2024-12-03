@@ -1,4 +1,4 @@
-# Localhost
+# LOCALHOST
 ### Get all albums
 GET  http://localhost:3000/albums
 
@@ -29,3 +29,37 @@ content-type: application/json
 
 ### Delete album
 DELETE  http://localhost:3000/albums/67476085141eec56e82b1dd6
+
+
+# PRODUCTION
+
+### Get all albums
+GET  https://cse341-artists.onrender.com/albums
+
+### Get album by Id
+GET  https://cse341-artists.onrender.com/albums/67476085141eec56e82b1dd6
+
+### Post new album
+POST https://cse341-artists.onrender.com/albums
+content-type: application/json
+
+{
+    "name": "Album1",
+    "totalTracks": 9,
+    "genres": ["Rock", "Pop"],
+    "popularity": 5
+}
+
+### Update album
+PUT https://cse341-artists.onrender.com/albums/67476085141eec56e82b1dd6
+content-type: application/json
+
+{
+    "name": "NewAlbum",
+    "totalTracks": 4,
+    "genres": ["Pop"],
+    "popularity": 2
+}
+
+### Delete album
+DELETE  https://cse341-artists.onrender.com/albums/67476085141eec56e82b1dd6

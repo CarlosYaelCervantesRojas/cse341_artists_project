@@ -1,4 +1,4 @@
-# Localhost
+# LOCALHOST
 ### Get all artists
 GET  http://localhost:3000/artists
 
@@ -35,3 +35,42 @@ content-type: application/json
 
 ### Delete artist
 DELETE  http://localhost:3000/artists/6746b4e5886af0af6711d787
+
+
+# PRODUCTION
+### Get all artists
+GET  https://cse341-artists.onrender.com/artists
+
+### Get artist by Id
+GET  https://cse341-artists.onrender.com/artists/67468f2b954f38dd47dfcb89
+
+### Post new artist
+POST https://cse341-artists.onrender.com/artists
+content-type: application/json
+
+{
+    "name": "Carlos",
+    "genres": ["Rock", "Pop"],
+    "popularity": 5,
+    "followers": 500,
+    "nationality": "MX",
+    "birthday": "2000-09-27",
+    "alive": 1
+}
+
+### Update artist
+PUT https://cse341-artists.onrender.com/artists/67468f2b954f38dd47dfcb89
+content-type: application/json
+
+{
+    "name": "Roberto",
+    "genres": ["Rock"],
+    "popularity": 3,
+    "followers": 100,
+    "nationality": "GT",
+    "birthday": "2000-09-27",
+    "alive": 1
+}
+
+### Delete artist
+DELETE  https://cse341-artists.onrender.com/artists/6746b4e5886af0af6711d787
