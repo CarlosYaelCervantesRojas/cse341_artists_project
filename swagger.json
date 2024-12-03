@@ -77,6 +77,9 @@
           "400": {
             "description": "Bad request (validation error) return the validation fields in the response body."
           },
+          "401": {
+            "description": "Unauthorized (unauthenticated) Client no authenticated."
+          },
           "500": {
             "description": "Internal Server Error."
           }
@@ -158,6 +161,9 @@
           "400": {
             "description": "Bad request (bad id format) or invalid data in fields."
           },
+          "401": {
+            "description": "Unauthorized (unauthenticated) Client no authenticated."
+          },
           "404": {
             "description": "Not Found (Id does not exist)."
           },
@@ -183,6 +189,9 @@
           },
           "400": {
             "description": "Bad request (bad id format)."
+          },
+          "401": {
+            "description": "Unauthorized (unauthenticated) Client no authenticated."
           },
           "404": {
             "description": "Not Found (Id does not exist)."
@@ -238,6 +247,9 @@
           },
           "400": {
             "description": "Bad request (validation error) return the validation fields in the response body."
+          },
+          "401": {
+            "description": "Unauthorized (unauthenticated) Client no authenticated."
           },
           "500": {
             "description": "Internal Server Error."
@@ -311,6 +323,9 @@
           "400": {
             "description": "Bad request (bad id format) or invalid data in fields."
           },
+          "401": {
+            "description": "Unauthorized (unauthenticated) Client no authenticated."
+          },
           "404": {
             "description": "Not Found (Id does not exist)."
           },
@@ -337,6 +352,9 @@
           },
           "400": {
             "description": "Bad Request (Bad Id format)."
+          },
+          "401": {
+            "description": "Unauthorized (unauthenticated) Client no authenticated."
           },
           "404": {
             "description": "Not Found (Id does not exist)."
